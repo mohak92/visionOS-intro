@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2024 Kodeco Inc.
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,11 +32,21 @@
 
 import SwiftUI
 
-@main
-struct Vision101App: App {
-  var body: some Scene {
-    WindowGroup {
-      ContentListView()
+struct CourseView: View {
+    
+    let course: Course
+    
+    var body: some View {
+        VStack {
+            Text(course.name)
+                .font(.largeTitle)
+            Text(course.content)
+            Spacer()
+        }
+        .navigationTitle(course.name)
     }
-  }
+}
+
+#Preview {
+    CourseView(course: Course(name: "visionOS", content: "content goes here!"))
 }

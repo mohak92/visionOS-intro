@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2024 Kodeco Inc.
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,22 +30,10 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
-import RealityKit
-import RealityKitContent
+import Foundation
 
-struct ContentView: View {
-  var body: some View {
-    VStack {
-      Model3D(named: "Scene", bundle: realityKitContentBundle)
-        .padding(.bottom, 50)
-      
-      Text("Hello, world!")
-    }
-    .padding()
-  }
-}
-
-#Preview(windowStyle: .automatic) {
-  ContentView()
+struct Course: Identifiable, Hashable {
+    let id =  UUID()
+    let name: String
+    let content: String
 }
